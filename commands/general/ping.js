@@ -1,5 +1,5 @@
-exports.run = async (client, message, args) => {
-  message.channel.send("Pong!");
+exports.run = async (client, message) => {
+  message.channel.createMessage("Pong!");
 };
 
 exports.help = {
@@ -11,5 +11,5 @@ exports.help = {
 
 exports.conf = {
   aliases: [],
-  cooldown: 5 // Integer = second.
+  cooldown: 5 // Seconds
 };
