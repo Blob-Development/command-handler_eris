@@ -1,14 +1,14 @@
-const {Client, Collection} = require("discord.js");
+const Eris = require("eris");
 
-module.exports = class TutorialBot extends Client {
-  constructor(options) {
-    super(options)
-    
-    this.commands = new Collection(); // This will store your commands.
-    this.cooldowns = new Collection(); // This will store your commands with cooldowns.
-    this.aliases = new Collection(); // This will store your alternative commands. Example: /server -> /serverinfo, /guild, /guildinfo
-    this.config = require('../config.json');
-    this.package = require("../package.json");
+module.exports = class TutorialBot extends Eris.Client {
+  constructor(token, options) {
+    super(token, options);
+    this.commands = new Map();
+    this.cooldowns = new Map();
+    this.aliases = new Map();
+    this.helps = new Map();
     this.recent = new Set();
-  }
-}
+    this.config = require("../config.json");
+    this.package = require("../package.json");
+  };
+};
