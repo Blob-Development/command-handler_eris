@@ -1,4 +1,5 @@
 const Eris = require("eris");
+require('pluris')(Eris);
 
 module.exports = class TutorialBot extends Eris.Client {
   constructor(token, options) {
